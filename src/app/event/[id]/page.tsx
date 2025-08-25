@@ -8,7 +8,7 @@ import LoadingSpinner from '@/components/LoadingSpinner'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { ArrowLeft, ExternalLink, Calendar, Ruler, Zap, Target, Globe } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 
 export default function EventDetailPage() {
   const params = useParams()
@@ -52,7 +52,6 @@ export default function EventDetailPage() {
     )
   }
 
-  // Rest of your existing detail page JSX stays the same...
   const avgDiameter = (
     (neo.estimated_diameter.kilometers.estimated_diameter_min + 
      neo.estimated_diameter.kilometers.estimated_diameter_max) / 2
@@ -62,7 +61,6 @@ export default function EventDetailPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Keep all your existing JSX from the detail page */}
       <div className="bg-white border-b">
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center gap-4">
@@ -88,11 +86,19 @@ export default function EventDetailPage() {
       </div>
       
       <div className="container mx-auto px-4 py-8">
-        <div className="text-center">
+        <div className="text-center space-y-4">
           <h2 className="text-xl font-bold">{neo.name}</h2>
-          <p className="text-gray-600 mt-2">
-            Diameter: {avgDiameter} km | 
+          <p className="text-gray-600">
+            Diameter: {avgDiameter} km
+          </p>
+          <p className="text-gray-600">
             Approach: {new Date(closeApproach?.close_approach_date || '').toLocaleDateString()}
+          </p>
+          <p className="text-gray-600">
+            Distance: {parseFloat(closeApproach?.miss_distance.kilometers || '0').toLocaleString()} km
+          </p>
+          <p className="text-gray-600">
+            Velocity: {parseFloat(closeApproach?.relative_velocity.kilometers_per_hour || '0').toLocaleString()} km/h
           </p>
         </div>
       </div>

@@ -41,7 +41,7 @@ export default function EventCard({
     router.push(`/event/${neo.id}`)
   }
 
-  const handleCheckboxChange = (checked: boolean) => {
+  const handleCheckboxChange = () => {
     if (onToggleSelect) {
       onToggleSelect(neo.id)
     }

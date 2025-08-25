@@ -6,16 +6,19 @@ import LoadingSpinner from '@/components/LoadingSpinner'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { RefreshCw, AlertTriangle, TrendingUp } from 'lucide-react'
+import { RefreshCw, AlertTriangle } from 'lucide-react'
 
-interface HomePageProps {
-  user: any
+interface User {
+  email?: string
 }
 
-export default function HomePage({ user }: HomePageProps) {
+interface HomePageProps {
+  user: User
+}
+
+export default function HomePage({ user: _user }: HomePageProps) {
   const { neoData, loading, error, loadMore, hasMore, refetch } = useGlobalNEOData()
   
-  // Calculate statistics
   const hazardousCount = neoData.filter(neo => neo.is_potentially_hazardous_asteroid).length
   const avgDiameter = neoData.length > 0 ? (
     neoData.reduce((sum, neo) => {
@@ -66,7 +69,6 @@ export default function HomePage({ user }: HomePageProps) {
   
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-gray-50">
-      {/* Hero Section */}
       <div className="bg-gradient-to-r from-blue-900 to-purple-900 text-white">
         <div className="container mx-auto px-4 py-16">
           <div className="text-center max-w-3xl mx-auto">
@@ -91,7 +93,6 @@ export default function HomePage({ user }: HomePageProps) {
         </div>
       </div>
 
-      {/* Statistics Section */}
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
           <Card>
@@ -125,7 +126,6 @@ export default function HomePage({ user }: HomePageProps) {
           </Card>
         </div>
 
-        {/* Main Content */}
         <EventList 
           neos={neoData}
           loading={loading}

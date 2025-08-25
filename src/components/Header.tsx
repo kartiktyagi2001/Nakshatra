@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button'
 import { signout } from '@/app/login/actions'
-import { redirect, useRouter } from 'next/navigation'
+import {useRouter } from 'next/navigation'
 
 interface HeaderProps {
   user?: any

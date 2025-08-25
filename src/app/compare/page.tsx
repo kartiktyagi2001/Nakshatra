@@ -7,7 +7,7 @@ import { useGlobalNEOData } from '@/hooks/useGlobalNEOData'
 import CompareChart from '@/components/CompareChart'
 import LoadingSpinner from '@/components/LoadingSpinner'
 import { Button } from '@/components/ui/button'
-import { ArrowLeft, Download, Share } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 export default function ComparePage() {
@@ -60,7 +60,6 @@ export default function ComparePage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
       <div className="bg-white border-b">
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
@@ -80,7 +79,6 @@ export default function ComparePage() {
             </div>
           </div>
           
-          {/* Selected NEOs Summary */}
           <div className="mt-4 flex flex-wrap gap-2">
             {selectedNEOs.map(neo => (
               <div
@@ -99,7 +97,6 @@ export default function ComparePage() {
         </div>
       </div>
 
-      {/* Charts */}
       <div className="container mx-auto px-4 py-8">
         <CompareChart neos={selectedNEOs} />
       </div>

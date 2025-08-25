@@ -77,7 +77,7 @@ export default function EventCard({
               checked={isSelected}
               onCheckedChange={handleCheckboxChange}
               onClick={(e) => e.stopPropagation()}
-              className="mt-1"
+              className="mt-1 border-gray-500"
             />
           )}
         </div>

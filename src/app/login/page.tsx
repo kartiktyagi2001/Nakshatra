@@ -10,19 +10,24 @@ export default function LoginPage({
   searchParams: { message: string }
 }) {
   return (
+
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-950 via-purple-900 to-black">
-      {/* Background Elements */}
+      {/* Background Dots */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white rounded-full animate-pulse"></div>
         <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-blue-300 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-blue-300 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-blue-300 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
         <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-purple-300 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+        <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-purple-300 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-2/3 right-1/4 w-1 h-1 bg-white rounded-full animate-pulse" style={{animationDelay: '3s'}}></div>
         <div className="absolute top-2/3 right-1/4 w-1 h-1 bg-white rounded-full animate-pulse" style={{animationDelay: '3s'}}></div>
       </div>
       
       <Card className="w-full max-w-md mx-4 relative z-10">
         <CardHeader className="text-center">
           <div className="text-4xl mb-2">🌌</div>
-          <CardTitle className="text-2xl font-bold">Cosmic Event Tracker</CardTitle>
+          <CardTitle className="text-2xl font-bold">Nakshatra</CardTitle>
           <CardDescription>Sign in to track Near-Earth Objects</CardDescription>
         </CardHeader>
         <CardContent>
@@ -33,7 +38,7 @@ export default function LoginPage({
                 id="email"
                 name="email"
                 type="email"
-                placeholder="astronaut@cosmos.com"
+                placeholder="kartik@mail.com"
                 required
               />
             </div>
@@ -49,7 +54,7 @@ export default function LoginPage({
             </div>
             <div className="flex flex-col space-y-2">
               <Button formAction={login} className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-                🚀 Sign In
+                Hop In 🚀
               </Button>
               <Button formAction={signup} variant="outline" className="w-full">
                 Create Account

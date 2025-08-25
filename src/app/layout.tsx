@@ -8,8 +8,18 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Nakshatra CET',
-  description: 'Track Near-Earth Objects and cosmic events using NASA APIs',
+  description: 'Track Near-Earth Objects and cosmic events using real-time NASA APIs. Compare asteroids, analyze hazard levels, and explore space data.',
+  keywords: 'NASA, Near-Earth Objects, NEO, asteroids, space, cosmic events, astronomy', //for better seo ;)
+  authors: [{ name: 'Kartik Tyagi' }],
+  viewport: 'width=device-width, initial-scale=1',
+  robots: 'index, follow',
+  openGraph: {
+    title: 'Nakshatra CET',
+    description: 'Track Near-Earth Objects using NASA API',
+    type: 'website',
+  },
 }
+
 
 export default async function RootLayout({
   children,

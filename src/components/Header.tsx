@@ -5,7 +5,9 @@ import { signout } from '@/app/login/actions'
 import {useRouter } from 'next/navigation'
 
 interface HeaderProps {
-  user?: any
+  user?: {
+    email?: string
+  } | null
 }
 
 export default function Header({ user }: HeaderProps) {

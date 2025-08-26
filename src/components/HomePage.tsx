@@ -16,7 +16,7 @@ interface HomePageProps {
   user: User
 }
 
-export default function HomePage({ user: _user }: HomePageProps) {
+export default function HomePage({ user }: HomePageProps) {
   const { neoData, loading, error, loadMore, hasMore, refetch } = useGlobalNEOData()
   
   const hazardousCount = neoData.filter(neo => neo.is_potentially_hazardous_asteroid).length

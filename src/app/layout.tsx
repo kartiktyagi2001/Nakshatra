@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { createClient } from '@/lib/supabase/server'
 import Header from '@/components/Header'
+import Image from 'next/image'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -41,8 +42,8 @@ export default async function RootLayout({
               <span>Crafted by <span className="font-semibold text-white hover:underline-offset-3 hover:underline"><a href="https://arcbit.vercel.app/">Kartik Tyagi</a></span></span> 
               |
               <span>
-                <a href="https://github.com/kartiktyagi2001/"><img src="/github.svg" width={24} height={24} alt="GitHub" /></a>
-              </span><span > <a href="mailto:arcbit.kartik@proton.me"><img src="/email.svg" width={24} height={24} alt="Email" /></a> </span>
+                <a href="https://github.com/kartiktyagi2001/"><Image src="/github.svg" width={24} height={24} alt="GitHub" /></a>
+              </span><span > <a href="mailto:arcbit.kartik@proton.me"><Image src="/email.svg" width={24} height={24} alt="Email" /></a> </span>
 
             </p>
           </div>

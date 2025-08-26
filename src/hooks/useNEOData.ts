@@ -107,7 +107,7 @@ export const useNEOData = (initialDays = 7): UseNEODataReturn => {
   // Initial load
   useEffect(() => {
     fetchNEOData(currentStartDate, initialDays, false)
-  }, []) // Only run on mount
+  }, [currentStartDate, fetchNEOData, initialDays]) // Include all dependencies
 
   return {
     neoData,

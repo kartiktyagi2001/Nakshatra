@@ -4,11 +4,13 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
-export default function LoginPage({
+export default async function LoginPage({
   searchParams,
 }: {
-  searchParams: { message: string }
+  searchParams: Promise<{ message?: string }>
 }) {
+  const params = await searchParams
+  
   return (
 
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-950 via-purple-900 to-black">
@@ -61,13 +63,13 @@ export default function LoginPage({
               </Button>
             </div>
           </form>
-          {searchParams?.message && (
+          {params?.message && (
             <div className={`mt-4 p-4 rounded-md text-sm ${
-              searchParams.message.includes('Check email') 
+              params.message.includes('Check email') 
                 ? 'bg-green-100 text-green-700 border border-green-200'
                 : 'bg-red-100 text-red-700 border border-red-200'
             }`}>
-              {searchParams.message}
+              {params.message}
             </div>
           )}
         </CardContent>

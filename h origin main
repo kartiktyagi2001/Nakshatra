@@ -1,0 +1,5 @@
+[33mbc26188[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m fixed more eslint deployment errs
+[33m3afa2a2[m fixed ts eslint errs during deployment
+[33m70d91b8[m added vercel.json
+[33mcdee763[m polished
+[33m83db0f8[m polished some inconsistencies
